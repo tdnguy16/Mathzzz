@@ -71,104 +71,168 @@ class _MyCustomFormState extends State<MyCustomForm> {
                     onPressed: () {
                     },
                     child: Text(myController.text.substring(0,1)),
+                    style: ElevatedButton.styleFrom(
+                        primary: Colors.teal,
+                        textStyle:
+                        const TextStyle(fontSize: 30, fontWeight: FontWeight.bold)
+                    ),
                   ),
                   ElevatedButton(
                     onPressed: () {
                     },
                     child: Text(myController.text.substring(1,2)),
+                    style: ElevatedButton.styleFrom(
+                        primary: Colors.teal,
+                        textStyle:
+                        const TextStyle(fontSize: 30, fontWeight: FontWeight.bold)
+                    ),
                   ),
                   ElevatedButton(
                     onPressed: () {
                     },
                     child: Text(myController.text.substring(2,3)),
+                    style: ElevatedButton.styleFrom(
+                        primary: Colors.teal,
+                        textStyle:
+                        const TextStyle(fontSize: 30, fontWeight: FontWeight.bold)
+                    ),
                   ),
                   ElevatedButton(
                     onPressed: () {
                     },
                     child: Text(myController.text.substring(3,4)),
+                    style: ElevatedButton.styleFrom(
+                        primary: Colors.teal,
+                        textStyle:
+                        const TextStyle(fontSize: 30, fontWeight: FontWeight.bold)
+                    ),
                   ),
                   // THOUSAND
                   Container(
                     padding: const EdgeInsets.all(2),
-                    child: Center(child: Text(myController.text.substring(0,1))),
+                    child: Center(
+                        child: Text(
+                          myController.text.substring(0,1),
+                          style: TextStyle(fontSize: 30),
+                        ),
+                      ),
                     color: Colors.teal[100],
                   ),
                   Container(
                     padding: const EdgeInsets.all(2),
-                    child: Image.asset('images/0.png'),
+                    child: const Center(
+                      child: Text(
+                        '0',
+                        style: TextStyle(fontSize: 30),
+                      ),
+                    ),
                     color: Colors.teal[100],
                   ),
                   Container(
                     padding: const EdgeInsets.all(2),
-                    child: Image.asset('images/0.png'),
+                    child: const Center(
+                      child: Text(
+                        '0',
+                        style: TextStyle(fontSize: 30),
+                      ),
+                    ),
                     color: Colors.teal[100],
                   ),
                   Container(
                     padding: const EdgeInsets.all(2),
-                    child: Image.asset('images/0.png'),
+                    child: const Center(
+                      child: Text(
+                        '0',
+                        style: TextStyle(fontSize: 30),
+                      ),
+                    ),
                     color: Colors.teal[100],
                   ),
                   //HUNDRED
                   Container(
                     padding: const EdgeInsets.all(2),
-                    child: Image.asset('images/0.png'),
                     color: Colors.teal[200],
                   ),
                   Container(
                     padding: const EdgeInsets.all(2),
-                    child: Text(myController.text.substring(1,2)),
+                    child: Center(
+                      child: Text(
+                        myController.text.substring(1,2),
+                        style: TextStyle(fontSize: 30),
+                      ),
+                    ),
                     color: Colors.teal[200],
                   ),
                   Container(
                     padding: const EdgeInsets.all(2),
-                    child: Image.asset('images/0.png'),
+                    child: const Center(
+                      child: Text(
+                        '0',
+                        style: TextStyle(fontSize: 30),
+                      ),
+                    ),
                     color: Colors.teal[200],
                   ),
                   Container(
                     padding: const EdgeInsets.all(2),
-                    child: Image.asset('images/0.png'),
+                    child: const Center(
+                      child: Text(
+                        '0',
+                        style: TextStyle(fontSize: 30),
+                      ),
+                    ),
                     color: Colors.teal[200],
                   ),
                   //TEN
                   Container(
                     padding: const EdgeInsets.all(2),
-                    child: Image.asset('images/0.png'),
                     color: Colors.teal[300],
                   ),
                   Container(
                     padding: const EdgeInsets.all(2),
-                    child: Image.asset('images/0.png'),
                     color: Colors.teal[300],
                   ),
                   Container(
                     padding: const EdgeInsets.all(2),
-                    child: Text(myController.text.substring(2,3)),
+                    child: Center(
+                      child: Text(
+                        myController.text.substring(2,3),
+                        style: TextStyle(fontSize: 30),
+                      ),
+                    ),
                     color: Colors.teal[300],
                   ),
                   Container(
                     padding: const EdgeInsets.all(2),
-                    child: Image.asset('images/0.png'),
+                    child: const Center(
+                      child: Text(
+                        '0',
+                        style: TextStyle(fontSize: 30),
+                      ),
+                    ),
                     color: Colors.teal[300],
                   ),
                   //ONE
                   Container(
                     padding: const EdgeInsets.all(2),
-                    child: Image.asset('images/0.png'),
                     color: Colors.teal[400],
                   ),
                   Container(
                     padding: const EdgeInsets.all(2),
-                    child: Image.asset('images/0.png'),
                     color: Colors.teal[400],
                   ),
                   Container(
                     padding: const EdgeInsets.all(2),
-                    child: Image.asset('images/0.png'),
                     color: Colors.teal[400],
                   ),
                   Container(
                     padding: const EdgeInsets.all(2),
-                    child: Text(myController.text.substring(3,4)),
+                    child: Center(
+                      child: Text(
+                        myController.text.substring(3,4),
+                        style: TextStyle(fontSize: 30),
+                      ),
+                    ),
                     color: Colors.teal[400],
                   ),
                 ],
