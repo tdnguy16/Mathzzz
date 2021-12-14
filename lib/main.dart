@@ -2,6 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 void main() => runApp(const MyApp());
+  var thousand = '0';
+  var hundred = '0';
+  var ten = '0';
+  var one = '0';
+  var thousandRow = '0';
+  var hundredRow = '0';
+  var tenRow = '0';
+  var oneRow = '0';
+
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -49,17 +58,31 @@ class _MyCustomFormState extends State<MyCustomForm> {
           ),
           body: TabBarView(
             children: [
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: TextField(
-                  decoration: const InputDecoration(labelText: "Enter your number"),
-                  keyboardType: TextInputType.number,
-                  inputFormatters: <TextInputFormatter>[
-                    FilteringTextInputFormatter.digitsOnly
-                    ],
-                  controller: myController,
+              Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: TextField(
+                      decoration: const InputDecoration(labelText: "Enter your number"),
+                      keyboardType: TextInputType.number,
+                      inputFormatters: <TextInputFormatter>[
+                        FilteringTextInputFormatter.digitsOnly
+                        ],
+                      controller: myController,
+                      ),
                   ),
-                ),
+                  ElevatedButton(
+                      onPressed: () {
+                        setState(() {
+                          thousand = myController.text.substring(0,1);
+                          hundred = myController.text.substring(1,2);
+                          ten = myController.text.substring(2,3);
+                          one = myController.text.substring(3,4);
+                        });
+                      },
+                      child: Text('OK'))
+                ],
+              ),
               GridView.count(
                 primary: false,
                 padding: const EdgeInsets.all(20),
@@ -69,8 +92,11 @@ class _MyCustomFormState extends State<MyCustomForm> {
                 children: <Widget>[
                   ElevatedButton(
                     onPressed: () {
+                      setState(() {
+                        thousandRow = thousand;
+                      });
                     },
-                    child: Text(myController.text.substring(0,1)),
+                    child: Text(thousand),
                     style: ElevatedButton.styleFrom(
                         primary: Colors.teal,
                         textStyle:
@@ -79,8 +105,11 @@ class _MyCustomFormState extends State<MyCustomForm> {
                   ),
                   ElevatedButton(
                     onPressed: () {
+                      setState(() {
+                        hundredRow = hundred;
+                      });
                     },
-                    child: Text(myController.text.substring(1,2)),
+                    child: Text(hundred),
                     style: ElevatedButton.styleFrom(
                         primary: Colors.teal,
                         textStyle:
@@ -89,8 +118,11 @@ class _MyCustomFormState extends State<MyCustomForm> {
                   ),
                   ElevatedButton(
                     onPressed: () {
+                      setState(() {
+                        tenRow = ten;
+                      });
                     },
-                    child: Text(myController.text.substring(2,3)),
+                    child: Text(ten),
                     style: ElevatedButton.styleFrom(
                         primary: Colors.teal,
                         textStyle:
@@ -99,8 +131,11 @@ class _MyCustomFormState extends State<MyCustomForm> {
                   ),
                   ElevatedButton(
                     onPressed: () {
+                      setState(() {
+                        oneRow = one;
+                      });
                     },
-                    child: Text(myController.text.substring(3,4)),
+                    child: Text(one),
                     style: ElevatedButton.styleFrom(
                         primary: Colors.teal,
                         textStyle:
@@ -112,7 +147,7 @@ class _MyCustomFormState extends State<MyCustomForm> {
                     padding: const EdgeInsets.all(2),
                     child: Center(
                         child: Text(
-                          myController.text.substring(0,1),
+                          thousandRow,
                           style: TextStyle(fontSize: 30),
                         ),
                       ),
@@ -157,7 +192,7 @@ class _MyCustomFormState extends State<MyCustomForm> {
                     padding: const EdgeInsets.all(2),
                     child: Center(
                       child: Text(
-                        myController.text.substring(1,2),
+                        hundredRow,
                         style: TextStyle(fontSize: 30),
                       ),
                     ),
@@ -196,7 +231,7 @@ class _MyCustomFormState extends State<MyCustomForm> {
                     padding: const EdgeInsets.all(2),
                     child: Center(
                       child: Text(
-                        myController.text.substring(2,3),
+                        tenRow,
                         style: TextStyle(fontSize: 30),
                       ),
                     ),
@@ -229,7 +264,7 @@ class _MyCustomFormState extends State<MyCustomForm> {
                     padding: const EdgeInsets.all(2),
                     child: Center(
                       child: Text(
-                        myController.text.substring(3,4),
+                        oneRow,
                         style: TextStyle(fontSize: 30),
                       ),
                     ),
