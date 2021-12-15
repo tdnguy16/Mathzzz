@@ -1,4 +1,5 @@
 import 'dart:math';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'random_number.dart';
@@ -86,220 +87,233 @@ class _MyCustomFormState extends State<MyCustomForm> {
             children: [
               Column(
                 children: [
-                  ElevatedButton(
-                      onPressed: () {
-                        _random();
-                        setState(() {
-                          thousand = x.toString().substring(0,1);
-                          hundred = x.toString().substring(1,2);
-                          ten = x.toString().substring(2,3);
-                          one = x.toString().substring(3,4);
-                        });
-                      },
-                      child: Text('Click for a number'),
-                  ),
+
                 ],
               ),
-              SafeArea(
-                child: GridView.count(
-                  primary: false,
-                  padding: const EdgeInsets.all(20),
-                  crossAxisSpacing: 2,
-                  mainAxisSpacing: 2,
-                  crossAxisCount: 4,
-                  children: <Widget>[
-                    ElevatedButton(
-                      onPressed: () {
-                        setState(() {
-                          thousand1 = thousand;
-                          hundred1 = '0';
-                          ten1 = '0';
-                          one1 = '0';
-                        });
-                      },
-                      child: Text(thousand),
-                      style: ElevatedButton.styleFrom(
-                          primary: Colors.teal,
-                          textStyle:
-                          const TextStyle(fontSize: 30, fontWeight: FontWeight.bold)
+              Column(
+                children: [
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Container(
+                        child: ElevatedButton(
+                          onPressed: () {
+                            _random();
+                            setState(() {
+                              thousand = x.toString().substring(0,1);
+                              hundred = x.toString().substring(1,2);
+                              ten = x.toString().substring(2,3);
+                              one = x.toString().substring(3,4);
+                            });
+                          },
+                          child: Text('Click for a number'),
+                        ),
                       ),
-                    ),
-                    ElevatedButton(
-                      onPressed: () {
-                        setState(() {
-                          hundred2 = hundred;
-                          ten2 = '0';
-                          one2 = '0';
-                        });
-                      },
-                      child: Text(hundred),
-                      style: ElevatedButton.styleFrom(
-                          primary: Colors.teal,
-                          textStyle:
-                          const TextStyle(fontSize: 30, fontWeight: FontWeight.bold)
-                      ),
-                    ),
-                    ElevatedButton(
-                      onPressed: () {
-                        setState(() {
-                          ten3 = ten;
-                          one3 = '0';
-                        });
-                      },
-                      child: Text(ten),
-                      style: ElevatedButton.styleFrom(
-                          primary: Colors.teal,
-                          textStyle:
-                          const TextStyle(fontSize: 30, fontWeight: FontWeight.bold)
-                      ),
-                    ),
-                    ElevatedButton(
-                      onPressed: () {
-                        setState(() {
-                          one4 = one;
-                        });
-                      },
-                      child: Text(one),
-                      style: ElevatedButton.styleFrom(
-                          primary: Colors.teal,
-                          textStyle:
-                          const TextStyle(fontSize: 30, fontWeight: FontWeight.bold)
-                      ),
-                    ),
-                    // THOUSAND
-                    Container(
-                      padding: const EdgeInsets.all(2),
-                      child: Center(
-                          child: Text(
-                            thousand1,
-                            style: TextStyle(fontSize: 30),
+                    ],
+                  ),
+                  Expanded(
+                    child: GridView.count(
+                      primary: false,
+                      padding: const EdgeInsets.all(20),
+                      crossAxisSpacing: 2,
+                      mainAxisSpacing: 2,
+                      crossAxisCount: 4,
+                      children: <Widget>[
+                        ElevatedButton(
+                          onPressed: () {
+                            setState(() {
+                              thousand1 = thousand;
+                              hundred1 = '0';
+                              ten1 = '0';
+                              one1 = '0';
+                            });
+                          },
+                          child: Text(thousand),
+                          style: ElevatedButton.styleFrom(
+                              primary: Colors.teal,
+                              textStyle:
+                              const TextStyle(fontSize: 30, fontWeight: FontWeight.bold)
                           ),
                         ),
-                      color: Colors.teal[100],
-                    ),
-                    Container(
-                      padding: const EdgeInsets.all(2),
-                      child: Center(
-                        child: Text(
-                          hundred1,
-                          style: TextStyle(fontSize: 30),
+                        ElevatedButton(
+                          onPressed: () {
+                            setState(() {
+                              hundred2 = hundred;
+                              ten2 = '0';
+                              one2 = '0';
+                            });
+                          },
+                          child: Text(hundred),
+                          style: ElevatedButton.styleFrom(
+                              primary: Colors.teal,
+                              textStyle:
+                              const TextStyle(fontSize: 30, fontWeight: FontWeight.bold)
+                          ),
                         ),
-                      ),
-                      color: Colors.teal[100],
-                    ),
-                    Container(
-                      padding: const EdgeInsets.all(2),
-                      child: Center(
-                        child: Text(
-                          ten1,
-                          style: TextStyle(fontSize: 30),
+                        ElevatedButton(
+                          onPressed: () {
+                            setState(() {
+                              ten3 = ten;
+                              one3 = '0';
+                            });
+                          },
+                          child: Text(ten),
+                          style: ElevatedButton.styleFrom(
+                              primary: Colors.teal,
+                              textStyle:
+                              const TextStyle(fontSize: 30, fontWeight: FontWeight.bold)
+                          ),
                         ),
-                      ),
-                      color: Colors.teal[100],
-                    ),
-                    Container(
-                      padding: const EdgeInsets.all(2),
-                      child: Center(
-                        child: Text(
-                          one1,
-                          style: TextStyle(fontSize: 30),
+                        ElevatedButton(
+                          onPressed: () {
+                            setState(() {
+                              one4 = one;
+                            });
+                          },
+                          child: Text(one),
+                          style: ElevatedButton.styleFrom(
+                              primary: Colors.teal,
+                              textStyle:
+                              const TextStyle(fontSize: 30, fontWeight: FontWeight.bold)
+                          ),
                         ),
-                      ),
-                      color: Colors.teal[100],
-                    ),
-                    //HUNDRED
-                    Container(
-                      padding: const EdgeInsets.all(2),
-                      color: Colors.teal[200],
-                    ),
-                    Container(
-                      padding: const EdgeInsets.all(2),
-                      child: Center(
-                        child: Text(
-                          hundred2,
-                          style: TextStyle(fontSize: 30),
+                        // THOUSAND
+                        Container(
+                          padding: const EdgeInsets.all(2),
+                          child: Center(
+                              child: Text(
+                                thousand1,
+                                style: TextStyle(fontSize: 30),
+                              ),
+                            ),
+                          color: Colors.teal[100],
                         ),
-                      ),
-                      color: Colors.teal[200],
-                    ),
-                    Container(
-                      padding: const EdgeInsets.all(2),
-                      child: Center(
-                        child: Text(
-                          ten2,
-                          style: TextStyle(fontSize: 30),
+                        Container(
+                          padding: const EdgeInsets.all(2),
+                          child: Center(
+                            child: Text(
+                              hundred1,
+                              style: TextStyle(fontSize: 30),
+                            ),
+                          ),
+                          color: Colors.teal[100],
                         ),
-                      ),
-                      color: Colors.teal[200],
-                    ),
-                    Container(
-                      padding: const EdgeInsets.all(2),
-                      child: Center(
-                        child: Text(
-                          one2,
-                          style: TextStyle(fontSize: 30),
+                        Container(
+                          padding: const EdgeInsets.all(2),
+                          child: Center(
+                            child: Text(
+                              ten1,
+                              style: TextStyle(fontSize: 30),
+                            ),
+                          ),
+                          color: Colors.teal[100],
                         ),
-                      ),
-                      color: Colors.teal[200],
-                    ),
-                    //TEN
-                    Container(
-                      padding: const EdgeInsets.all(2),
-                      color: Colors.teal[300],
-                    ),
-                    Container(
-                      padding: const EdgeInsets.all(2),
-                      color: Colors.teal[300],
-                    ),
-                    Container(
-                      padding: const EdgeInsets.all(2),
-                      child: Center(
-                        child: Text(
-                          ten3,
-                          style: TextStyle(fontSize: 30),
+                        Container(
+                          padding: const EdgeInsets.all(2),
+                          child: Center(
+                            child: Text(
+                              one1,
+                              style: TextStyle(fontSize: 30),
+                            ),
+                          ),
+                          color: Colors.teal[100],
                         ),
-                      ),
-                      color: Colors.teal[300],
-                    ),
-                    Container(
-                      padding: const EdgeInsets.all(2),
-                      child: Center(
-                        child: Text(
-                          one3,
-                          style: TextStyle(fontSize: 30),
+                        //HUNDRED
+                        Container(
+                          padding: const EdgeInsets.all(2),
+                          color: Colors.teal[200],
                         ),
-                      ),
-                      color: Colors.teal[300],
-                    ),
-                    //ONE
-                    Container(
-                      padding: const EdgeInsets.all(2),
-                      color: Colors.teal[400],
-                    ),
-                    Container(
-                      padding: const EdgeInsets.all(2),
-                      color: Colors.teal[400],
-                    ),
-                    Container(
-                      padding: const EdgeInsets.all(2),
-                      color: Colors.teal[400],
-                    ),
-                    Container(
-                      padding: const EdgeInsets.all(2),
-                      child: Center(
-                        child: Text(
-                          one4,
-                          style: TextStyle(fontSize: 30),
+                        Container(
+                          padding: const EdgeInsets.all(2),
+                          child: Center(
+                            child: Text(
+                              hundred2,
+                              style: TextStyle(fontSize: 30),
+                            ),
+                          ),
+                          color: Colors.teal[200],
                         ),
-                      ),
-                      color: Colors.teal[400],
+                        Container(
+                          padding: const EdgeInsets.all(2),
+                          child: Center(
+                            child: Text(
+                              ten2,
+                              style: TextStyle(fontSize: 30),
+                            ),
+                          ),
+                          color: Colors.teal[200],
+                        ),
+                        Container(
+                          padding: const EdgeInsets.all(2),
+                          child: Center(
+                            child: Text(
+                              one2,
+                              style: TextStyle(fontSize: 30),
+                            ),
+                          ),
+                          color: Colors.teal[200],
+                        ),
+                        //TEN
+                        Container(
+                          padding: const EdgeInsets.all(2),
+                          color: Colors.teal[300],
+                        ),
+                        Container(
+                          padding: const EdgeInsets.all(2),
+                          color: Colors.teal[300],
+                        ),
+                        Container(
+                          padding: const EdgeInsets.all(2),
+                          child: Center(
+                            child: Text(
+                              ten3,
+                              style: TextStyle(fontSize: 30),
+                            ),
+                          ),
+                          color: Colors.teal[300],
+                        ),
+                        Container(
+                          padding: const EdgeInsets.all(2),
+                          child: Center(
+                            child: Text(
+                              one3,
+                              style: TextStyle(fontSize: 30),
+                            ),
+                          ),
+                          color: Colors.teal[300],
+                        ),
+                        //ONE
+                        Container(
+                          padding: const EdgeInsets.all(2),
+                          color: Colors.teal[400],
+                        ),
+                        Container(
+                          padding: const EdgeInsets.all(2),
+                          color: Colors.teal[400],
+                        ),
+                        Container(
+                          padding: const EdgeInsets.all(2),
+                          color: Colors.teal[400],
+                        ),
+                        Container(
+                          padding: const EdgeInsets.all(2),
+                          child: Center(
+                            child: Text(
+                              one4,
+                              style: TextStyle(fontSize: 30),
+                            ),
+                          ),
+                          color: Colors.teal[400],
+                        ),
+                        FloatingActionButton(
+                          onPressed: () {
+                          },
+                          child: Text('Reset'),
+                        )
+                      ],
                     ),
-                    FloatingActionButton(
-                      onPressed: _reset,
-                      child: Text('Again'),
-                    )
-                  ],
-                ),
+                  ),
+                ],
               ),
             ],
           ),
