@@ -5,13 +5,6 @@ import 'random_number.dart';
 
 void main() => runApp(const MyApp());
 
-void random() {
-  var rng = new Random();
-  for (var i = 0; i < 10; i++) {
-    print(rng.nextInt(100));
-  }
-}
-
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
@@ -33,7 +26,6 @@ class MyCustomForm extends StatefulWidget {
 
 class _MyCustomFormState extends State<MyCustomForm> {
   var x = 0;
-  var randomnumber = '';
   var thousand = '';
   var hundred = '';
   var ten = '';
@@ -105,12 +97,6 @@ class _MyCustomFormState extends State<MyCustomForm> {
                         });
                       },
                       child: Text('Click for a number'),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text(
-                      randomnumber,
-                    ),
                   ),
                 ],
               ),
