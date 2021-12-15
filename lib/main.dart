@@ -87,29 +87,28 @@ class _MyCustomFormState extends State<MyCustomForm> {
             children: [
               Column(
                 children: [
-
                 ],
               ),
               Column(
                 children: [
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Container(
-                        child: ElevatedButton(
-                          onPressed: () {
-                            _random();
-                            setState(() {
-                              thousand = x.toString().substring(0,1);
-                              hundred = x.toString().substring(1,2);
-                              ten = x.toString().substring(2,3);
-                              one = x.toString().substring(3,4);
-                            });
-                          },
-                          child: Text('Click for a number'),
-                        ),
+                  Container(
+                    width: 320,
+                    height: 50,
+                    child: ElevatedButton(
+                      style: ButtonStyle(
+                        backgroundColor: MaterialStateProperty.all<Color>(Colors.teal),
                       ),
-                    ],
+                      onPressed: () {
+                        _random();
+                        setState(() {
+                          thousand = x.toString().substring(0,1);
+                          hundred = x.toString().substring(1,2);
+                          ten = x.toString().substring(2,3);
+                          one = x.toString().substring(3,4);
+                        });
+                      },
+                      child: Text('Click for a number'),
+                    ),
                   ),
                   Expanded(
                     child: GridView.count(
@@ -320,6 +319,5 @@ class _MyCustomFormState extends State<MyCustomForm> {
         ),
       ),
     );
-
   }
 }
